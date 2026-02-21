@@ -2,11 +2,11 @@ class RestaurantAi < Formula
   include Language::Python::Virtualenv
 
   desc "AI Restaurant Generator using Streamlit and Ollama"
-  homepage "https://github.com/AyushAnuj/restaurant-ai"
+  homepage "https://github.com/AyushAnuj/resturant-ai"
 
-  url "https://github.com/AyushAnuj/restaurant-ai/archive/refs/tags/v1.0.0.tar.gz"
+  url "https://github.com/AyushAnuj/resturant-ai/archive/refs/tags/v1.0.0.tar.gz"
 
-  sha256 "8e9a18ebe85eef55fc231162bd5a7c19b004a5d3734031bfe88fd3dde07df5f7"
+  sha256 "8dc242b22a0519bb13681bf83e7de7b97a254f50261c3964f61ea02a75fa142b"
 
   license "MIT"
 
