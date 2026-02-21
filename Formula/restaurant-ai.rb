@@ -21,7 +21,7 @@ class RestaurantAi < Formula
     <<~EOS
       Run the app with:
 
-        restaurant-ai
+        resturant-ai
 
       Make sure Ollama is running:
 
