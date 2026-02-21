@@ -12,11 +12,13 @@ class ResturantAi < Formula
 
   def install
     venv = virtualenv_create(libexec, "python3.11")
-    venv.pip_install_and_link buildpath
-    venv.pip_install_and_link "streamlit"
-    venv.pip_install_and_link "langchain-core"
-    venv.pip_install_and_link "langchain-community"
-    venv.pip_install_and_link "langchain-ollama"
+    venv.pip_install "streamlit"
+    venv.pip_install "langchain-core"
+    venv.pip_install "langchain-community"
+    venv.pip_install "langchain-ollama"
+    venv.pip_install buildpath
+    # Link CLI manually
+    bin.install_symlink libexec/"bin/resturant-ai"
   end
 
   def caveats
