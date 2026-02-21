@@ -11,24 +11,26 @@ class ResturantAi < Formula
   depends_on "ollama"
 
   def install
-    virtualenv_create(libexec, "python3.11")
-
-    system libexec/"bin/pip", "install", "."
-
-    system libexec/"bin/pip", "install", "-r", "requirements.txt"
-
-    bin.install_symlink libexec/"bin/resturant-ai"
+    virtualenv_install_with_resources
   end
 
   def caveats
     <<~EOS
-      Run:
+      To run the app:
 
         resturant-ai
 
-      Make sure Ollama is running:
+      Make sure Ollama server is running:
 
         ollama serve
+
+      If llama3 is not installed:
+
+        ollama pull llama3
     EOS
+  end
+
+  test do
+    system "#{bin}/resturant-ai", "--help"
   end
 end
