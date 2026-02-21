@@ -11,10 +11,11 @@ class ResturantAi < Formula
   depends_on "ollama"
 
   def install
-    venv = virtualenv_create(libexec, "python3.11")
-    venv.pip_install "-r", buildpath/"requirements.txt"
+    venv = virtualenv_create(libexec, Formula["python@3.11"].opt_bin/"python3")
+
+    venv.pip_install buildpath/"requirements.txt"
     venv.pip_install buildpath
-    # Link CLI manually
+
     bin.install_symlink libexec/"bin/resturant-ai"
   end
 
