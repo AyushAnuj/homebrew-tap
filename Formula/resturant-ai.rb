@@ -1,4 +1,4 @@
-class RestaurantAi < Formula
+class ResturantAi < Formula
   include Language::Python::Virtualenv
 
   desc "AI Restaurant Generator using Streamlit and Ollama"
