@@ -6,7 +6,7 @@ class RestaurantAi < Formula
 
   url "https://github.com/AyushAnuj/restaurant-ai/archive/refs/tags/v1.0.0.tar.gz"
 
-  sha256 "PASTE_SHA256_HERE"
+  sha256 "8e9a18ebe85eef55fc231162bd5a7c19b004a5d3734031bfe88fd3dde07df5f7"
 
   license "MIT"
 
