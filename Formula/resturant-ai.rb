@@ -11,7 +11,12 @@ class ResturantAi < Formula
   depends_on "ollama"
 
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.11")
+    venv.pip_install_and_link buildpath
+    venv.pip_install "streamlit"
+    venv.pip_install "langchain-core"
+    venv.pip_install "langchain-community"
+    venv.pip_install "langchain-ollama"
   end
 
   def caveats
