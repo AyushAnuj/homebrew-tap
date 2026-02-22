@@ -10,6 +10,8 @@ class ResturantAi < Formula
   depends_on "python@3.11"
   def install
     venv = virtualenv_create(libexec, "python3.11")
+    system libexec/"bin/python3.11", "-m", "ensurepip"
+    system libexec/"bin/python3.11", "-m", "pip", "install", "--upgrade", "pip", "setuptools", "wheel"
     venv.pip_install_and_link buildpath
   end
 
