@@ -8,32 +8,6 @@ class ResturantAi < Formula
   license "MIT"
 
   depends_on "python@3.11"
-  depends_on "ollama"
-
-  resource "streamlit" do
-    url "https://files.pythonhosted.org/packages/source/s/streamlit/streamlit-1.32.0.tar.gz"
-    sha256 "replace_with_real_sha256"
-  end
-
-  resource "blinker" do
-    url "https://files.pythonhosted.org/packages/source/b/blinker/blinker-1.7.0.tar.gz"
-    sha256 "replace_with_real_sha256"
-  end
-
-  resource "langchain-core" do
-    url "https://files.pythonhosted.org/packages/source/l/langchain-core/langchain-core-0.1.0.tar.gz"
-    sha256 "replace_with_real_sha256"
-  end
-
-  resource "langchain-community" do
-    url "https://files.pythonhosted.org/packages/source/l/langchain-community/langchain-community-0.0.20.tar.gz"
-    sha256 "replace_with_real_sha256"
-  end
-
-  resource "langchain-ollama" do
-    url "https://files.pythonhosted.org/packages/source/l/langchain-ollama/langchain-ollama-0.1.0.tar.gz"
-    sha256 "replace_with_real_sha256"
-  end
 
   def install
     virtualenv_install_with_resources
