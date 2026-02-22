@@ -8,9 +8,9 @@ class ResturantAi < Formula
   license "MIT"
 
   depends_on "python@3.11"
-
   def install
-    virtualenv_install_with_resources
+    venv = virtualenv_create(libexec, "python3.11")
+    venv.pip_install_and_link buildpath
   end
 
   def caveats
