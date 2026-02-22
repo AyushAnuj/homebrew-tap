@@ -14,6 +14,7 @@ class ResturantAi < Formula
     system libexec/"bin/python3.11", "-m", "pip", "install", "--upgrade", "pip", "setuptools", "wheel"
     venv.pip_install_and_link buildpath
     (libexec/"lib/python3.11/site-packages").install buildpath/"app.py"
+    (libexec/"lib/python3.11/site-packages").install buildpath/"restaurant_generator.py"
   end
 
   def caveats
