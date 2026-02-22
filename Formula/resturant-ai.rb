@@ -6,7 +6,7 @@ class ResturantAi < Formula
   url "https://github.com/AyushAnuj/resturant-ai/archive/refs/tags/v1.0.0.tar.gz"
   sha256 "8dc242b22a0519bb13681bf83e7de7b97a254f50261c3964f61ea02a75fa142b"
   license "MIT"
-  revision 6
+  revision 7
   depends_on "python@3.11"
 
   def install
@@ -20,11 +20,11 @@ class ResturantAi < Formula
     tap_dir = Pathname.new(__FILE__).parent.parent
     requirements_file = tap_dir/"requirements.txt"
     
-    # Copy requirements to a temp location and install
+    # Copy requirements to libexec for pip install
     if requirements_file.exist?
-      temp_requirements = libexec/"requirements.txt"
-      cp requirements_file, temp_requirements
-      venv.pip_install temp_requirements
+      cp requirements_file, libexec/"requirements.txt"
+      # Use system call to pip with -r flag for requirements file
+      system "#{libexec}/bin/python", "-m", "pip", "install", "-r", "#{libexec}/requirements.txt"
     end
 
     (bin/"resturant-ai").write <<~EOS
