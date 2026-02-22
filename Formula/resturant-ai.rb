@@ -30,7 +30,7 @@ class ResturantAi < Formula
     (bin/"resturant-ai").write <<~EOS
       #!/bin/bash
       export PATH="#{libexec}/bin:$PATH"
-      exec "#{libexec}/bin/python3" -m streamlit run "#{libexec}/app/resturant_ai/app.py" "$@"
+      exec "#{libexec}/bin/python3" -m streamlit run "#{libexec}/app/app.py" "$@"
     EOS
     (bin/"resturant-ai").chmod 0755
   end
